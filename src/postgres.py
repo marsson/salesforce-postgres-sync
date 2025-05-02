@@ -16,7 +16,10 @@ class PostgreSQL:
         self.logger = logging.getLogger(__name__)
 
     def fetch_table_queries(self):
+        self.logger.info("Entering fetch_table_queries")
         try:
+            # TODO: Modify this query to select table_name and filter instead of query
+            # TODO: The table_conf schema needs to be updated to replace query with filter
             self.cursor.execute("SELECT table_name, query FROM table_conf;")
             self.logger.info("fetched data from configurations table")
             return self.cursor.fetchall()
@@ -26,6 +29,9 @@ class PostgreSQL:
 
     def create_table(self, table_name):
         try:
+            # TODO: Modify this method to create tables based on object metadata
+            # TODO: The table schema should include columns for all fields in the object metadata
+            # TODO: Consider using SQLAlchemy models for table creation instead of raw SQL
             self.cursor.execute(
                 f"""
                 CREATE TABLE IF NOT EXISTS {table_name} (
@@ -43,6 +49,9 @@ class PostgreSQL:
 
     def insert_data(self, table_name, records):
         try:
+            # TODO: Modify this method to insert all fields from the records
+            # TODO: Use the object metadata to determine which fields to insert
+            # TODO: Consider using SQLAlchemy models for data insertion instead of raw SQL
             for record in records:
                 sf_id = record["Id"]
                 self.cursor.execute(

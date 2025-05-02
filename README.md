@@ -1,12 +1,25 @@
 # Salesforce Postgres Synchronization
 
-This Python script facilitates synchronization between Salesforce and PostgreSQL databases. It fetches data from Salesforce, saves it into PostgreSQL, and provides functionality to delete records from Salesforce.
+This Python application facilitates synchronization between Salesforce and PostgreSQL databases. It fetches data from Salesforce, saves it into PostgreSQL, and provides functionality to delete records from Salesforce.
 
 ## Features
 
-- Fetch data from Salesforce based on specified queries.
-- Save fetched data to PostgreSQL tables.
-- Delete records from Salesforce based on record IDs.
+- Fetch data from Salesforce based on specified queries
+- Save fetched data to PostgreSQL tables
+- Process data asynchronously using Redis Queue
+- Support for containerized development with Docker
+- Flexible Salesforce authentication options
+- Comprehensive error handling and retry mechanisms
+- Delete records from Salesforce based on record IDs (optional)
+
+## Documentation
+
+Comprehensive documentation is available in the [docs](docs/) directory:
+
+- [Feature Documentation](docs/feature_documentation.md) - Detailed information about features and how to use them
+- [API Documentation](docs/api_documentation.md) - Reference for APIs and interfaces
+- [Architecture Documentation](docs/architecture.md) - System overview and design details
+- [Implementation Plan](docs/implementation_plan.md) - Project phases, milestones, and tasks
 
 ## Prerequisites
 
